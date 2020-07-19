@@ -34,4 +34,6 @@ You can run the following to start your webserver.
 npm run serve
 ```
 
+> You must change the link in `public/index.html` to include your `CLIENT_ID` from LinkedIn.
+
 Once it is up and running, you can visit `localhost:8080` and click the link to login using LinkedIn.
