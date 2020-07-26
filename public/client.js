@@ -1,6 +1,8 @@
 console.log("Client-side code running");
 
-fetch("http://localhost:3000/api/getMe")
+fetch("http://localhost:3000/api/getMe", {
+  credentials: "include",
+})
   .then((response) => {
     return response.json();
   })
