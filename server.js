@@ -67,9 +67,9 @@ router.get("/callback", (req, res) => {
         var access_token = response.data.access_token;
         res.statusCode = 302;
         res.setHeader("Location", "http://localhost:8080/profile");
-        res.cookie("access_token", access_token, access_token, {
-          httpOnly: true,
+        res.cookie("access_token", access_token, {
           maxAge: 3600,
+          httpOnly: true,
           // secure: true,
         });
         res.end();
