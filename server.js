@@ -24,7 +24,7 @@ const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
 const callback_url = process.env.CALLBACK_URL;
 
-router.all((req, res, next) => {
+router.use((req, res, next) => {
   console.log("Time: ", Date.now());
   next();
 });
@@ -68,7 +68,7 @@ router.get("/callback", (req, res) => {
         res.statusCode = 302;
         res.setHeader("Location", "http://localhost:8080/profile");
         res.cookie("access_token", access_token, {
-          maxAge: 3600,
+          maxAge: 60 * 60 * 1000, // cookie lasts an hour
           httpOnly: true,
           // secure: true,
         });
